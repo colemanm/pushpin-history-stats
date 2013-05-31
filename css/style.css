@@ -1,0 +1,94 @@
+body {
+  background: #929292;
+  font-family: "Noto Sans";
+  margin: auto;
+  width: 1280px;
+}
+.monospace {
+  font-family: "Inconsolata XL", monospace;
+}
+
+section {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 140px;
+}
+
+p {
+  font-size: 75px;
+  margin: 30px 0;
+}
+
+a {
+  color: #6baed6;
+}
+
+a:not(:hover) {
+  text-decoration: none;
+}
+code, pre { font-family: "Inconsolata XL", monospace; }
+
+.stack {
+  background: #fff url("../img/bg.png");
+  color: #444;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  display: none;
+  font-size: 48px;
+  height: 800px;
+  padding: 180px 80px;
+  width: 1280px;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.active {
+  box-shadow: 0px 4px 8px rgba(0,0,0,.5);
+  display: block;
+  position: fixed;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+.map-slide {
+  padding: 0;
+  margin: 0;
+}
+
+.subtitle { font-size: 50px; }
+.title { font-weight: bold; font-size: 120px;}
+.name { color: #555; font-size: 35px; }
+.smaller { font-size: 60px;}
+.spaced { letter-spacing: 10px; font-weight: bold; font-style: italic; }
+.blue {
+  color:#069;
+}
+.center { text-align: center; }
+.right { text-align: right; }
+.padding60 { padding: 60px 80px; }
+.padding100 { padding: 100px 80px; }
+
+@media
+screen and (max-device-width: 1024px) {
+  body {
+    width: 1200px;
+  }
+
+  .stack {
+    margin: 40px 0;
+  }
+
+  .stack {
+    display: block;
+  }
+}
