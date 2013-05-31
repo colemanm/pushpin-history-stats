@@ -73,10 +73,13 @@ code, pre { font-family: "Inconsolata XL", monospace; }
 .blue {
   color:#069;
 }
+.left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
+.f-right { float: right; }
 .padding60 { padding: 60px 80px; }
 .padding100 { padding: 100px 80px; }
+.hidden { overflow: hidden; }
 
 @media
 screen and (max-device-width: 1024px) {
