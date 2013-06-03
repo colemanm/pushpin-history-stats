@@ -21,15 +21,23 @@ p {
   font-size: 75px;
   margin: 30px 0;
 }
+.smaller { font-size: 60px; }
+.bigger { font-size: 100px; }
 
 a {
-  color: #6baed6;
+  color: #069;
 }
 
 a:not(:hover) {
   text-decoration: none;
 }
 code, pre { font-family: "Inconsolata XL", monospace; }
+
+ul {
+  text-align: left;
+  padding: 0 100px;
+  margin: 0 auto;
+}
 
 .stack {
   background: #fff url("../img/bg.png");
@@ -58,7 +66,14 @@ code, pre { font-family: "Inconsolata XL", monospace; }
   top: 0;
   bottom: 0;
   width: 100%;
-  z-index: -1;
+}
+/*#navigation {
+  z-index: 99999;
+  top: 20px;
+  right: 20px;
+}*/
+#navigation a {
+  display: block;
 }
 .map-slide {
   padding: 0;
@@ -68,7 +83,6 @@ code, pre { font-family: "Inconsolata XL", monospace; }
 .subtitle { font-size: 50px; }
 .title { font-weight: bold; font-size: 120px;}
 .name { color: #555; font-size: 35px; }
-.smaller { font-size: 60px;}
 .spaced { letter-spacing: 10px; font-weight: bold; font-style: italic; }
 .blue {
   color:#069;
@@ -76,10 +90,16 @@ code, pre { font-family: "Inconsolata XL", monospace; }
 .left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
+.bold { font-weight: bold; }
 .f-right { float: right; }
 .padding60 { padding: 60px 80px; }
+.padding80 { padding: 80px 80px; }
 .padding100 { padding: 100px 80px; }
 .hidden { overflow: hidden; }
+img.fullscreen {
+  position: absolute;
+  top:0; left:0;
+}
 
 @media
 screen and (max-device-width: 1024px) {

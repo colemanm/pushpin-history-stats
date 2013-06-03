@@ -8,12 +8,15 @@
 
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <script src='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js'></script>
 <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css' rel='stylesheet' />
 <!--[if lte IE 8]>
   <link href='http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.ie.css' rel='stylesheet' >
 <![endif]-->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/stats.js"></script>
 
 </head>
 
@@ -45,11 +48,11 @@
 </section>
 
 <section>
-  <p>Why build another editor?</p>
+  <p class="bigger">Why build another editor?</p>
 </section>
 
-<section>
-  <p class="smaller">A mobile editor shouldn't be the full suite of editing tools, scaled to handheld size.</p>
+<section class="padding100">
+  <p class="smaller">A mobile editor shouldn't be a full suite of editing tools, scaled to handheld size.</p>
   <p class="smaller">Too many mobile editors just edit tag key/value pairs.</p>
 </section>
 
@@ -58,7 +61,7 @@
 </section>
 
 <section>
-  <p><strong>A few design principles:</strong></p>
+  <p class="bigger"><strong>A few design principles:</strong></p>
 </section>
 
 <section class="padding100">
@@ -77,14 +80,28 @@
   <img src="img/reticle.png" width="300" />
 </section>
 
+<section class="padding100 hidden">
+  <p>Auto-lookup values based on existing data.</p>
+  <img src="img/autofill_street.png" width="300" />
+  <img src="img/autofill_city.png" width="300" />
+</section>
+
 <section class="padding100">
   <p>Keep it <strong>simple</strong>, for casual use</p>
   <br />
   <img src="img/check.png" width="300" />
 </section>
 
+<section class="left padding80">
+  <img class="f-right" src="img/osm_types.png" />
+  <br />
+  <p>Simple list of categories + types.
+  <p class="blue"><strong>No need to remember tags</strong>.</p>
+  <img src="" />
+</section>
+
 <section>
-  <p><strong>How it works:</strong></p>
+  <p class="bigger"><strong>How it works:</strong></p>
 </section>
 
 <section class="padding100 hidden">
@@ -102,11 +119,71 @@
   <img src="img/3-save_to_osm.png" />
 </section>
 
+<section class="padding80">
+  <p>Based on commercial tools for field data collection.</p>
+  <img src="img/fulcrum_logo.png" />
+  <p class="smaller"><a href="http://fulcrumapp.com/">fulcrumapp.com</a></p>
+</section>
+
+<section class="padding80">
+  <p class="blue">Form for editing is maintained in the Fulcrum form designer.</p>
+  <ul>
+    <li>Simple drag-and-drop form elements, mapped to OSM tags</li>
+    <li>Field conditions for setting tag relationships</li>
+    <li>Editable links to HTML-based help</li>
+  </ul>
+</section>
+
+<section class="hidden">
+  <img src="img/fulcrum_pushpin.png" class="fullscreen" />
+</section>
+
+<section>
+  <p class="smaller">Has enabled communities to make thousands &amp; thousands of contributions</p>
+  <p>From expert + casual mappers</p>
+</section>
+
+<section>
+  <p class="bigger">Total edits: <span class="blue bold" id="total-edits"></span></p>
+  <p class="bigger">Last 24 hours: <span class="blue bold" id="last-24"></span></p>
+  <p class="smaller"><a href="http://pushpinosm.org/stats">pushpinosm.org/stats</a></p>
+</section>
+
+<section>
+  <p class="bigger"><span class="blue bold" id="total-users"></span> users have made contributions</p>
+</section>
+
+<section>
+  <p>Test</p>
+</section>
+
 <section class="map-slide">
   <div id="map"></div>
+ <!--  <div id="navigation">
+    <a href="#" data-position="27.81,-82.5,11">Tampa Bay, FL</a>
+    <a href="#" data-position="38.86,-77.1,12">Washington, DC</a>
+    <a href="#" data-position="37.55,-122,10">San Francisco, CA</a>
+    <a href="#" data-position="35.56,-220.28,10">Tokyo, Japan</a>
+  </div> -->
   <script type='text/javascript'>
     var map = L.mapbox.map('map', 'colemanm.map-lzmujzzc').setView([35.35, 139.8], 10);
+    map.addControl(L.mapbox.geocoderControl('colemanm.map-lzmujzzc'));
+    // document.getElementById('navigation').onclick = function(e) {
+    //   var pos = e.target.getAttribute('position');
+    //   if (pos) {
+    //     var loc = pos.split(',');
+    //     map.setView(loc);
+    //   }
+    // }
   </script>
+</section>
+
+<section>
+  <p class="bigger">What's next?</p>
+</section>
+
+<section>
+  <p>Localization</p>
 </section>
 
 </body>
