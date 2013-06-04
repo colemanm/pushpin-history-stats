@@ -29,10 +29,11 @@
   <p class="name">Coleman McCormick &mdash; <strong>@colemanm</strong></p>
 </section>
 
-<section class="padding60">
+<section class="padding20">
   <p><strong>Who am I?</strong></p>
   <img src="img/coleman.png" width="350" />
   <p class="smaller">geographer @ spatial networks</p>
+  <p class="smallest grey nomargin">human geography, field data collection, mapping tools</p>
 </section>
 
 <section>
@@ -134,6 +135,17 @@
   </ul>
 </section>
 
+<section class="padding60">
+  <p>Conditions can present options in proper context</p>
+    <ul>
+      <li><code class="blue">collection_times</code> &mdash; For postboxes</li>
+      <li><code class="blue">atm=yes/no</code> &mdash; Where they're likely</li>
+      <li><code class="blue">cuisine</code> &mdash; For places serving food</li>
+      <li><code class="blue">building:height</code> &mdash; Only buildings</li>
+      <li><code class="blue">religion</code> &mdash; Places of worship</li>
+    </ul>
+</section>
+
 <section class="hidden">
   <img src="img/fulcrum_pushpin.png" class="fullscreen" />
 </section>
@@ -144,9 +156,13 @@
 </section>
 
 <section>
+  <p class="biggest bold">Statistics</p>
+</section>
+
+<section>
   <p class="bigger">Total edits: <span class="blue bold" id="total-edits"></span></p>
   <p class="bigger">Last 24 hours: <span class="blue bold" id="last-24"></span></p>
-  <p class="smaller"><a href="http://pushpinosm.org/stats">pushpinosm.org/stats</a></p>
+  <p class="smaller"><a href="http://pushpinosm.org/stats" target="_blank">pushpinosm.org/stats</a></p>
 </section>
 
 <section>
@@ -154,36 +170,92 @@
 </section>
 
 <section>
-  <p>Test</p>
+  <p class="bigger">Edits spanning <span class="blue bold">97</span> different countries</p>
+</section>
+
+<section>
+  <iframe class="stats-sheet" width="800" height="800" frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AiqbYKi1gdX7dDZjb0NtLTNtT0dPQ2xrSDNkMk9LM0E&single=true&gid=0&output=html&widget=true'></iframe>
 </section>
 
 <section class="map-slide">
   <div id="map"></div>
- <!--  <div id="navigation">
-    <a href="#" data-position="27.81,-82.5,11">Tampa Bay, FL</a>
-    <a href="#" data-position="38.86,-77.1,12">Washington, DC</a>
-    <a href="#" data-position="37.55,-122,10">San Francisco, CA</a>
-    <a href="#" data-position="35.56,-220.28,10">Tokyo, Japan</a>
-  </div> -->
+  <div id="navigation">
+    <a data-position="27.81,-82.5">Tampa Bay, FL</a>
+    <a data-position="38.86,-77.1">Washington, DC</a>
+    <a data-position="37.55,-122">San Francisco, CA</a>
+    <a data-position="35.56,-220.28">Tokyo, Japan</a>
+  </div>
   <script type='text/javascript'>
-    var map = L.mapbox.map('map', 'colemanm.map-lzmujzzc').setView([35.35, 139.8], 10);
-    map.addControl(L.mapbox.geocoderControl('colemanm.map-lzmujzzc'));
-    // document.getElementById('navigation').onclick = function(e) {
-    //   var pos = e.target.getAttribute('position');
-    //   if (pos) {
-    //     var loc = pos.split(',');
-    //     map.setView(loc);
-    //   }
-    // }
+    $(function() {
+      var map = L.mapbox.map('map', 'colemanm.map-lzmujzzc');
+      $('#navigation a').click(function(e) {
+        var pos = e.target.getAttribute('data-position');
+        console.log(pos);
+        if (pos) {
+          var loc = pos.split(',');
+          map.setView(loc, 10);
+        }
+      });
+    });
   </script>
 </section>
 
-<section>
-  <p class="bigger">What's next?</p>
+<section class="padding100">
+  <p><span class="blue bold bigger">26,583</span><br />nodes created</p>
+  <p><span class="blue bold bigger">13,644</span><br />nodes, ways, relations modified</p>
 </section>
 
 <section>
-  <p>Localization</p>
+  <p>On newly created nodes:</p>
+  <p><span class="blue bold bigger">75,355</span><br />distinct tags</p>
+</section>
+
+<section class="padding60">
+  <p>Edits per Day</p>
+  <div class="edits-by-day"></div>
+</section>
+
+<section class="padding20 tags-container">
+  <p>Top tags added</p>
+  <div class="top-tags f-left">
+    <table>
+      <tr class="bold"><td>name</td><td>19863</td></tr>
+      <tr class="bold"><td>amenity</td><td>12335</td></tr>
+      <tr class="bold"><td>shop</td><td>5513</td></tr>
+      <tr><td>source</td><td>4152</td></tr>
+      <tr><td>addr:street</td><td>2907</td></tr>
+      <tr><td>addr:city</td><td>2877</td></tr>
+      <tr><td>cuisine</td><td>2316</td></tr>
+      <tr><td>addr:postcode</td><td>2245</td></tr>
+      <tr class="bold"><td>addr:housenumber</td><td>2016</td></tr>
+      <tr><td>highway</td><td>1716</td></tr>
+    </table>
+  </div>
+  <div class="top-tags f-right">
+    <table>
+      <tr><td>addr:country</td><td>1584</td></tr>
+      <tr><td>addr:state</td><td>1564</td></tr>
+      <tr><td>outdoor_seating</td><td>1000</td></tr>
+      <tr><td>wheelchair</td><td>993</td></tr>
+      <tr><td>phone</td><td>895</td></tr>
+      <tr><td>takeaway</td><td>833</td></tr>
+      <tr><td>atm</td><td>740</td></tr>
+      <tr><td>smoking</td><td>691</td></tr>
+      <tr class="bold"><td>tourism</td><td>685</td></tr>
+      <tr><td>covered</td><td>670</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <p class="bigger bold">What's next?</p>
+</section>
+
+<section class="padding60">
+  <p class="bigger bold">Localization!</p>
+  <p class="blue">マップ</p>
+  <p class="blue">地图</p>
+  <p class="blue">خريطة</p>
 </section>
 
 </body>

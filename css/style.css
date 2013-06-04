@@ -21,8 +21,13 @@ p {
   font-size: 75px;
   margin: 30px 0;
 }
+p.nomargin {
+  margin: 0;
+}
 .smaller { font-size: 60px; }
+.smallest { font-size: 40px; }
 .bigger { font-size: 100px; }
+.biggest { font-size: 120px; }
 
 a {
   color: #069;
@@ -62,36 +67,63 @@ ul {
 }
 
 #map {
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
+  height: 800px;
   width: 100%;
 }
-/*#navigation {
+#navigation {
+  position: absolute;
   z-index: 99999;
   top: 20px;
   right: 20px;
-}*/
+  text-align: right;
+  background-color: rgba(255,255,255,0.5);
+  padding: 10px;
+  font-size: 25px;
+}
+#navigation ul { padding: 0; }
 #navigation a {
   display: block;
+  color: #444;
 }
 .map-slide {
   padding: 0;
   margin: 0;
+}
+.stats-sheet {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  bottom: 0;
+}
+.top-tags {
+  font-family: "Inconsolata XL", monospace;
+  font-size: 34px;
+}
+.top-tags table {
+  width: 450px;
+}
+.top-tags td {
+  text-align: left;
 }
 
 .subtitle { font-size: 50px; }
 .title { font-weight: bold; font-size: 120px;}
 .name { color: #555; font-size: 35px; }
 .spaced { letter-spacing: 10px; font-weight: bold; font-style: italic; }
-.blue {
-  color:#069;
-}
+.blue { color: #069; }
+.green { color: #95c47b; }
+.grey { color: #999; }
 .left { text-align: left; }
 .center { text-align: center; }
 .right { text-align: right; }
 .bold { font-weight: bold; }
+.f-left { float: left; }
 .f-right { float: right; }
+.padding20 { padding: 20px 80px; }
+.padding40 { padding: 40px 80px; }
 .padding60 { padding: 60px 80px; }
 .padding80 { padding: 80px 80px; }
 .padding100 { padding: 100px 80px; }
@@ -99,6 +131,27 @@ ul {
 img.fullscreen {
   position: absolute;
   top:0; left:0;
+}
+
+.edits-by-day {
+}
+
+path, rect {
+  fill: #069;
+  border-left: 1px solid #068;
+}
+
+.y.axis {
+  font-size: 10pt;
+}
+
+.x.axis {
+  font-size: 11pt;
+  margin-top: 4px;
+}
+
+.axis path.domain {
+  display: none;
 }
 
 @media
